@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150612033035) do
+ActiveRecord::Schema.define(version: 20150612054201) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "last_trains", force: :cascade do |t|
+    t.string   "depature"
+    t.string   "destination"
+    t.datetime "depature_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "routes", force: :cascade do |t|
     t.time     "limit_time"
