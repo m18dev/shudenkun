@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  limit_time: 2015-06-12 12:30:36
+  origin: MyString
+
+two:
+  limit_time: 2015-06-12 12:30:36
+  origin: MyString

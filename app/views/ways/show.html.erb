@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Limit time:</strong>
+  <%= @way.limit_time %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @way.origin %>
+</p>
+
+<%= link_to 'Edit', edit_way_path(@way) %> |
+<%= link_to 'Back', ways_path %>
