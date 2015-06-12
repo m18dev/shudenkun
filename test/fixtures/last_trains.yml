@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  depature: MyString
+  destination: MyString
+  depature_at: 2015-06-12 14:42:01
+  created_at: 2015-06-12 14:42:01
+
+two:
+  depature: MyString
+  destination: MyString
+  depature_at: 2015-06-12 14:42:01
+  created_at: 2015-06-12 14:42:01
