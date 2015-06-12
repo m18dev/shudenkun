@@ -28,7 +28,7 @@ module SpiderWeb
 
     # 出発地点と目的地、日付を指定してURLを作成する。
     def assemble_url(from, to, today)
-      "http://transit.loco.yahoo.co.jp/search/result?flatlon=&from=#{URI.escape(from)}&to=#{URI.escape(to)}&y=#{today.year}&m=#{today.month}&d=#{today.day}&type=2&ticket=ic&al=1&shin=1&ex=1&hb=1&lb=1&sr=1&s=0&expkind=1&ws=2&kw=%E6%BA%9C%E6%B1%A0%E5%B1%B1%E7%8E%8B"
+      "http://transit.loco.yahoo.co.jp/search/result?flatlon=&from=#{URI.escape(from)}&to=#{URI.escape(to)}&y=#{today.year}&m=#{today.month}&d=#{today.day}&type=2&ticket=ic&al=1&shin=1&ex=1&hb=1&lb=1&sr=1&s=0&expkind=1&ws=2"
     end
 
     def get_last_routes(from, to)
