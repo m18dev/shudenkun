@@ -12,7 +12,7 @@ class LastTrain < ActiveRecord::Base
     return LastTrain.create(depature: depature, destination: destination, depature_at: lt2.limit_time)
   end
 
-  # 終電発車までの残り時間
+  # 終電発車までの残り時間（分）
   def remain_min
     depature_time = DateTime.parse(depature_at + " JST")
     ((depature_time - DateTime.now) * 24 * 60).to_i
