@@ -2,7 +2,7 @@ class LastTrainController < ActionController::Base
   # http://localhost:3000/api/last_train.json?user_id=1
   def get_last_train
     user = User.find(params[:user_id])
-    depature = User.find(params[:departure])
+    depature = params[:depature]
 
     last_train = LastTrain.ensure(depature, user.nearest_station)
 
