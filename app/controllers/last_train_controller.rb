@@ -2,8 +2,7 @@ class LastTrainController < ActionController::Base
   # http://localhost:3000/api/last_train.json?user_id=1
   def get_last_train
     user = User.find(params[:user_id])
-    # TODO 何らかの方法で最寄り駅を取得。
-    depature = "溜池山王"
+    depature = User.find(params[:departure])
 
     last_train = LastTrain.ensure(depature, user.nearest_station)
 
