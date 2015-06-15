@@ -10,4 +10,17 @@ class LastTrainTest < ActiveSupport::TestCase
     assert_not_nil lt.depature_at
   end
 
+  test "depature_time_at" do
+    lt = LastTrain.new()
+    lt.depature_at = "23:30"
+    assert_equal lt.depature_time_at.strftime("%H:%M"), "23:30"
+    assert_equal lt.depature_time_at.strftime("%d"), Time.new.strftime("%d")
+  end
+
+  test "depature_time_at over midnight" do
+    lt = LastTrain.new()
+    lt.depature_at = "01:00"
+    assert_equal lt.depature_time_at.strftime("%H:%M"), "01:00"
+    assert_equal lt.depature_time_at.strftime("%d"), (Time.new + 1.day).strftime("%d")
+  end
 end

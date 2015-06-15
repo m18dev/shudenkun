@@ -9,7 +9,7 @@ class LastTrainController < ActionController::Base
     response = {
       depature: last_train.depature,
       destination: last_train.destination,
-      depature_at: last_train.depature_at,
+      depature_at: last_train.depature_time_at,
       remain_min: last_train.remain_min
     }
     respond_to do |format|
