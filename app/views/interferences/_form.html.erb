@@ -1,0 +1,21 @@
+<%= form_for(@interference) do |f| %>
+  <% if @interference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@interference.errors.count, "error") %> prohibited this interference from being saved:</h2>
+
+      <ul>
+      <% @interference.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :target_user %><br>
+    <%= f.number_field :target_user %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

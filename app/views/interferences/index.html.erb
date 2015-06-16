@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Interferences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Target user</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interferences.each do |interference| %>
+      <tr>
+        <td><%= interference.target_user %></td>
+        <td><%= link_to 'Show', interference %></td>
+        <td><%= link_to 'Edit', edit_interference_path(interference) %></td>
+        <td><%= link_to 'Destroy', interference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interference', new_interference_path %>
