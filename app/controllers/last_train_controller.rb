@@ -6,11 +6,13 @@ class LastTrainController < ActionController::Base
 
     last_train = LastTrain.ensure(depature, user.nearest_station)
 
+    interference = Interference.where(target_user: user.id).first
+
     response = {
       depature: last_train.depature,
       destination: last_train.destination,
-      depature_at: last_train.depature_time_at,
-      remain_min: last_train.remain_min
+      depature_at: interference.nil? ? last_train.depature_time_at : last_train.depature_time_at + 10.minute,
+      remain_min: interference.nil?  ? last_train.remain_min : last_train.remain_min + 10
     }
     respond_to do |format|
       format.json { render json: response }
